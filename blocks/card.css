@@ -1,0 +1,41 @@
+.content__grid { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card {
+    display: grid;
+    background-color: #fff;
+    grid-auto-rows: auto 1fr;
+    border-radius: 10px;
+}
+
+.card__image { 
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 ;
+}
+
+.card__footer {
+    padding: 18px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    overflow: hidden;
+}
+
+.card__title {
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: 900;
+    width: calc(100% - 32px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card__like {
+    max-width: 19px;
+}

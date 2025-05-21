@@ -1,64 +1,9 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/normalize__xtra.css);
 @import url(../vendor/fonts.css);
-
-.page {
-    max-width: 1080px;
-    margin: auto;
-    font-family: inter;
-    padding: 16px;
-}
-
-/** --- **/
-
-.nav {
-
-}
-
-.nav__logo {
-    max-width: 173px;
-    padding: 44px 0 44px;
-}
-
-.nav__line {
-border: #fff 19px;
-width: 100%;
-}
-
-/** --- */
-.content__grid { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.card {
-    display: grid;
-    background-color: #fff;
-    grid-auto-rows: auto 1fr;
-    border-radius: 10px;
-}
-
-.card__image { 
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0 ;
-}
-
-.card__footer {
-    padding: 24px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.card__title {
-    font-family: 'Inter';
-    font-size: 24px;
-    font-weight: 900;
-}
-
-.card__like {
-    max-width: 19px;
-}
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/nav.css);
+@import url(../blocks/card.css);
+@import url(../blocks/pop-up.css);
+@import url(../blocks/footer.css);

@@ -1,0 +1,14 @@
+.nav {
+    padding: 44px 0 44px;
+    border-bottom: 1px solid #545454;
+}
+
+.nav__logo {
+    max-width: 173px;
+
+}
+
+.nav__line {
+border: #fff 19px;
+width: 100%;
+}
