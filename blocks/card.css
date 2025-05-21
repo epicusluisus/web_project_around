@@ -19,7 +19,7 @@
 }
 
 .card__footer {
-    padding: 18px 16px;
+    padding: 18px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -28,7 +28,7 @@
 
 .card__title {
     font-family: 'Inter';
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 900;
     width: calc(100% - 32px);
     text-overflow: ellipsis;
@@ -38,4 +38,6 @@
 
 .card__like {
     max-width: 19px;
+    border: #fff;
+    color:red;
 }
