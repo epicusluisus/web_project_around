@@ -1,0 +1,54 @@
+.header {
+    padding: 32px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'image profile button';
+    align-items: center;
+    gap: 30px;
+}
+
+.header__avatar {
+    grid-area: image;
+    max-width: 120px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.header__profile {
+    grid-area: profile;
+    color: #fff;
+    font-family: Inter;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: baseline;
+    gap: 6px 16px;
+}
+
+.header__profile-name {
+    font-weight: 500;
+    font-size: 36px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.header__profile-button {
+    height: 24px;
+    width: 24px;
+    background: url(../images/edit-button.svg);
+}
+
+.header__profile-tag {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header__add-button {
+    grid-area: button;
+    width: 150px;
+    height: 50px;
+    background: url(../images/add-button.svg);
+}

@@ -1,11 +1,10 @@
 .nav {
-    padding: 44px 0 44px;
+    padding: 16px 0 24px;
     border-bottom: 1px solid #545454;
 }
 
 .nav__logo {
-    max-width: 173px;
-
+    max-width: 152px;
 }
 
 .nav__line {

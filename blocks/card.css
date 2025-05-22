@@ -22,7 +22,7 @@
     padding: 18px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -37,7 +37,18 @@
 }
 
 .card__like {
-    max-width: 19px;
-    border: #fff;
-    color:red;
+    width: 21px;
+    height: 19px;
+    background: url(../images/heart.svg);
+    transition: all 0.25s ease-out;
+}
+
+.card__like:hover {
+    transform: scale(1.1);
+}
+
+.card__like:active {
+    transform: translateY(3px) scale(1.1);
+    opacity: 100%;
+    background: url(../images/heart-active.svg);
 }
