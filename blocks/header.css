@@ -39,6 +39,11 @@
     height: 24px;
     width: 24px;
     background: url(../images/edit-button.svg);
+    background-size: 50%;
+    padding: 3px;
+    border: 1px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .header__profile-tag {
@@ -59,7 +64,7 @@
     border: 2px solid #fff;
     width: 100%;
     min-width: 50px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 
