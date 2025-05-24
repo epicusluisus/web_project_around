@@ -52,3 +52,18 @@
     opacity: 100%;
     background: url(../images/heart-active.svg);
 }
+
+ 
+/* --- --- */
+@media screen and (max-width: 800px) {
+    .content__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .content__grid {
+        grid-template-columns: 1fr;
+    }
+}

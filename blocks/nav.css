@@ -11,3 +11,9 @@
 border: #fff 19px;
 width: 100%;
 }
+
+@media screen and (max-width: 500px) {
+    .nav__logo {
+        max-width: 126px;
+    }
+}
