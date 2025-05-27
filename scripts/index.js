@@ -1,40 +1,32 @@
-const page = document.querySelector('.page');
-const popup = page.querySelector('.popup');
-const header = page.querySelector('.header');
+let editButton = document.querySelector('.header__profile-button');
+let closeButton = document.querySelector('.popup__close-button');
+let saveButton = document.querySelector('.popup__save-button');
+let popup = document.querySelector('.popup');
 
-const addButtonName = header.querySelector('.header__profile-button');
-const closeButtonName = popup.querySelector('.popup__close-button');
-let profileName = header.querySelector('.header__profile-name');
-let profileJob = header.querySelector('.header__profile-tag');
-let nameInput = popup.querySelector('#input-name');
-let jobInput = popup.querySelector('#input-tag');
-const form = popup.querySelector('.popup__form');
+let nameInput = document.querySelector('#input-name');
+let jobInput = document.querySelector('#input-tag');
+let name = document.querySelector('.header__profile-name');
+let job = document.querySelector('.header__profile-tag');
+let form = document.querySelector('.popup__container');
 
-function openPopup() {
+function openpopup() {
   popup.classList.add('popup_opened');
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
+  nameInput.value = name.textContent;
+  jobInput.value = job.textContent;
 }
 
-function closePopup() {
+function closepopup() {
   popup.classList.remove('popup_opened');
 }
 
-addButtonName.addEventListener('click', openPopup);
-closeButtonName.addEventListener('click', closePopup);
+editButton.addEventListener('click' , openpopup);
+closeButton.addEventListener('click' , closepopup);
 
-
-//form n bits
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
-  closePopup();
+function submitForm(e) {
+  e.preventDefault();
+  job.textContent = jobInput.value;
+  name.textContent = nameInput.value;
+  closepopup();
 }
 
-form.addEventListener('submit', handleProfileFormSubmit);
-
-/*ayudeme porfavor, no le entiendo a esto, no le enuentro solución
-terminé el diseño de toda la página en 3 diás y llevo 4 en el java
-repasé todo el sprint 7 dos veces
-Ayuda
+form.addEventListener('submit' , submitForm );
