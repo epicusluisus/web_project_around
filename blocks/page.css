@@ -3,6 +3,20 @@
     margin: auto;
     font-family: 'Inter', sans-serif;
     padding: 0 16px;
+    
+    /* stolen from somewhere /*
+    /*optimizacion de fuentes en distintos disposivos*/
+    /*Suavizado de fuentes*/
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    /*Tamaño de la fuente*/
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+
+    /*Legibilidad del texto*/
+    text-rendering: optimizeLegibility;
 }
 
 .button {
@@ -13,3 +27,4 @@
 .button:hover {
     opacity: 60%;
 }
+

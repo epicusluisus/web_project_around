@@ -1,5 +1,8 @@
+/* the basics */
 @import url(../vendor/normalize.css);
 @import url(../vendor/normalize__xtra.css);
+
+/* the good stuff*/
 @import url(../vendor/fonts.css);
 @import url(../blocks/page.css);
 @import url(../blocks/pop-up.css);

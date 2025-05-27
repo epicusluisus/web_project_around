@@ -7,7 +7,6 @@
     <meta name="author" content="Luis Angel" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Around the World</title>
-    <link rel="shortcut icon" href="images/tt_logo.svg" />
     <link rel="stylesheet" href="pages/index.css" />
   </head>
   <body>
@@ -16,18 +15,18 @@
         <!--Pop-up Timezz-->
         <div class="popup">
             <div class="popup__overlay"></div>
-            <div class="popup__container">
+            <form class="popup__container">
                 <button class="popup__close-button button"></button>
                 <p class="popup__description">Editar perfil</p>
-                <form class="popup__form">
-                    <input class="popup__input" placeholder="Nombre">
-                    <input class="popup__input" placeholder="Acerca de mí">
-                </form>
-                <button class="popup__save-button button">Guardar</button>
-            </div>
+                <fieldset class="popup__form">
+                    <input class="popup__form-element popup__form-element_name" placeholder="Nombre" type="text">
+                    <input class="popup__form-element popup__form-element_tag" placeholder="Acerca de mí" type="text">
+                </fieldset>
+                <button class="popup__save-button button" type="submit">Guardar</button>
+            </form>
         </div>
         
-
+        <!--header n' nav Timezz-->
         <nav class="nav">
             <img class="nav__logo" src="images/logo.svg">
          </nav>
@@ -36,11 +35,12 @@
             <div class="header__profile">
                 <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
                 <button class="header__profile-button button"></button>
-                <p class="header__profile-tag">Diseñador de páginas web</p>
+                <p class="header__profile-tag">Diseñador web fullstack</p>
             </div >
-            <button class="header__add-button button"></button>
+            <button class="header__add-button button" type="submit"></button>
         </header>
-
+        <script src="scripts/index.js"></script>
+        
         <!--Content Timezz-->
         <main class="content">
             <div class="content__grid">
@@ -86,7 +86,6 @@
                         <button class="card__like button">
                     </div>
                 </div>
-
             </div>
         </main>
         <footer class="footer">
