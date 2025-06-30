@@ -11,85 +11,156 @@
   </head>
   <body>
     <div class="page">
+      <!--Pop-up Timezz-->
+      <!--edit profile popup-->
+      <div class="popup">
+        <div class="popup__overlay"></div>
+        <form class="popup__container">
+          <button class="popup__close-button button"></button>
+          <p class="popup__description">Editar perfil</p>
+          <fieldset class="popup__form">
+            <input
+              class="popup__form-element"
+              placeholder="Nombre"
+              type="text"
+              id="input-name"
+            />
+            <input
+              class="popup__form-element"
+              placeholder="Acerca de mí"
+              type="text"
+              id="input-tag"
+            />
+          </fieldset>
+          <button class="popup__save-button button" type="submit">
+            Guardar
+          </button>
+        </form>
+      </div>
 
-        <!--Pop-up Timezz-->
-        <div class="popup">
-            <div class="popup__overlay"></div>
-            <form class="popup__container">
-                <button class="popup__close-button button"></button>
-                <p class="popup__description">Editar perfil</p>
-                <fieldset class="popup__form">
-                    <input class="popup__form-element" placeholder="Nombre" type="text" id="input-name">
-                    <input class="popup__form-element" placeholder="Acerca de mí" type="text" id="input-tag">
-                </fieldset>
-                <button class="popup__save-button button" type="submit">Guardar</button>
-            </form>
+      <!--edit add photo popup-->
+      <div class="popup">
+        <div class="popup__overlay"></div>
+        <form class="popup__container">
+          <button class="popup__close-button button"></button>
+          <p class="popup__description">Nuevo lugar</p>
+          <fieldset class="popup__form">
+            <input
+              class="popup__form-element"
+              placeholder="Nombre"
+              type="text"
+              id="input-name"
+            />
+            <input
+              class="popup__form-element"
+              placeholder="Acerca de mí"
+              type="text"
+              id="input-tag"
+            />
+          </fieldset>
+          <button class="popup__save-button button" type="submit">
+            Guardar
+          </button>
+        </form>
+      </div>
+
+      <!--header n' nav Timezz-->
+      <nav class="nav">
+        <img
+          class="nav__logo"
+          src="images/logo.svg"
+          alt="logo around the US "
+        />
+      </nav>
+      <header class="header">
+        <img
+          class="header__avatar"
+          src="images/profile-image.jpg"
+          alt="foto de perfil de algo o alguien"
+        />
+        <div class="header__profile">
+          <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
+          <button class="header__profile-button button"></button>
+          <p class="header__profile-tag">Diseñador web fullstack</p>
         </div>
-        
-        <!--header n' nav Timezz-->
-        <nav class="nav">
-            <img class="nav__logo" src="images/logo.svg" alt="logo around the US ">
-         </nav>
-        <header class="header">
-            <img class="header__avatar" src="images/profile-image.jpg" alt="foto de perfil de algo o alguien">
-            <div class="header__profile">
-                <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
-                <button class="header__profile-button button"></button>
-                <p class="header__profile-tag">Diseñador web fullstack</p>
-            </div >
-            <button class="header__add-button button" type="submit"></button>
-        </header>
-        
-        <!--Content Timezz-->
-        <main class="content">
-            <div class="content__grid">
-                <div class="card">
-                    <img class="card__image" src="images/yosemite.jpg" alt="pinos en el Valle de Yosemite">
-                    <div class="card__footer">
-                        <p class="card__title">Valle de Yosemite</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card__image" src="images/lago-louise.jpg" alt="Agua cristalina del Lago Louise">
-                    <div class="card__footer">
-                        <p class="card__title">Lago Louise</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card__image" src="images/montaña-calva.jpg" alt="Atardecer en las Montañas Calvas">
-                    <div class="card__footer">
-                        <p class="card__title">Montañas Calvas</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card__image" src="images/latemar.jpg" alt="Anochecer en las Montañas de Latemar">
-                    <div class="card__footer">
-                        <p class="card__title">Latemar</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card__image" src="images/vanois.jpg" alt="lago de Vanoise National Park">
-                    <div class="card__footer">
-                        <p class="card__title">Vanoise National Park</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card__image" src="images/lago_di.jpg" alt="Canoas en el lago de Braies">
-                    <div class="card__footer">
-                        <p class="card__title">Lago de Braies</p>
-                        <button class="card__like button"></button>
-                    </div>
-                </div>
+        <button class="header__add-button button" type="submit"></button>
+      </header>
+
+      <!--Content Timezz-->
+      <main class="content">
+        <div class="content__grid">
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/yosemite.jpg"
+              alt="pinos en el Valle de Yosemite"
+            />
+            <button class="card__delete-button button"></button>
+            <div class="card__footer">
+              <p class="card__title">Valle de Yosemite</p>
+              <button class="card__like button"></button>
             </div>
-        </main>
-        <footer class="footer">
-        <p class="footer__copyright"> 2025 Luis Ángel</p>
-    </footer>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/lago-louise.jpg"
+              alt="Agua cristalina del Lago Louise"
+            />
+            <div class="card__footer">
+              <p class="card__title">Lago Louise</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/montaña-calva.jpg"
+              alt="Atardecer en las Montañas Calvas"
+            />
+            <div class="card__footer">
+              <p class="card__title">Montañas Calvas</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/latemar.jpg"
+              alt="Anochecer en las Montañas de Latemar"
+            />
+            <div class="card__footer">
+              <p class="card__title">Latemar</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/vanois.jpg"
+              alt="lago de Vanoise National Park"
+            />
+            <div class="card__footer">
+              <p class="card__title">Vanoise National Park</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card__image"
+              src="images/lago_di.jpg"
+              alt="Canoas en el lago de Braies"
+            />
+            <div class="card__footer">
+              <p class="card__title">Lago de Braies</p>
+              <button class="card__like button"></button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">2025 Luis Ángel</p>
+      </footer>
     </div>
     <script src="scripts/index.js"></script>
   </body>

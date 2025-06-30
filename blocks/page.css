@@ -1,30 +1,35 @@
 .page {
-    max-width: 1020px;
-    margin: auto;
-    font-family: 'Inter', sans-serif;
-    padding: 0 16px;
-    
-    /* stolen from somewhere /*
+  max-width: 1020px;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  padding: 0 28px;
+
+  /* stolen from somewhere /*
     /*optimizacion de fuentes en distintos disposivos*/
-    /*Suavizado de fuentes*/
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  /*Suavizado de fuentes*/
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 
-    /*Tamaño de la fuente*/
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
+  /*Tamaño de la fuente*/
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 
-    /*Legibilidad del texto*/
-    text-rendering: optimizeLegibility;
+  /*Legibilidad del texto*/
+  text-rendering: optimizeLegibility;
 }
 
 .button {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
 .button:hover {
-    opacity: 60%;
+  opacity: 60%;
 }
 
+@media screen and (max-width: 800px) {
+  .page {
+    padding: 0 16px;
+  }
+}
