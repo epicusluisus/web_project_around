@@ -16,6 +16,9 @@
   padding-top: 24px;
 }
 
+.content__no-post__hidden {
+  display: none;
+}
 
 /* --- --- */
 @media screen and (max-width: 800px) {

@@ -36,6 +36,8 @@
   height: 19px;
   background: url(../images/heart.svg);
   transition: all 0.25s ease-out;
+  cursor: pointer;
+  border: none;
 }
 
 .card__delete-button {
@@ -48,6 +50,7 @@
   right: 16px;
   background-size: contain;
   background-position: center;
+  opacity: 0%;
 }
 
 .card__like:hover {
@@ -58,4 +61,8 @@
   background: url(../images/heart-active.svg);
   cursor: pointer;
   border: none;
+}
+
+.card:hover .card__delete-button {
+  opacity: 100%;
 }

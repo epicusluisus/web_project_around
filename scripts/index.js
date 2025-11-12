@@ -11,32 +11,9 @@ let name = document.querySelector(".header__profile-name");
 let job = document.querySelector(".header__profile-tag");
 let form = document.querySelector(".popup__container");
 
-function openpopup() {
-  popup.classList.remove("popup_closed");
-  nameInput.value = name.textContent;
-  jobInput.value = job.textContent;
-}
-
-function closepopup() {
-  popup.classList.add("popup_closed");
-}
-
-editButton.addEventListener("click", openpopup);
-closeButton.addEventListener("click", closepopup);
-
-function submitForm(e) {
-  e.preventDefault();
-  job.textContent = jobInput.value;
-  name.textContent = nameInput.value;
-  closepopup();
-}
-
-
-
 function noPost() {
-  noPostText.classList.remove("popup_closed");
+  noPostText.classList.remove("content__no-post__hidden");
 }
-
 
 function addCard(cardTitle, cardLink) {
   const cardTemplate = document.querySelector("#card-template").content;
@@ -93,5 +70,6 @@ function addInitialCards() {
   initialCards.forEach((item) => {
     addCard(item.title, item.link);
   })
+  console.log("hello again")
 }
 addInitialCards();
