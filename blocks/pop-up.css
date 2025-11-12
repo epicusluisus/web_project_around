@@ -1,9 +1,17 @@
 .popup {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
-.popup_opened {
-    display: flex;
+.popup_closed {
+    display: none;
 }
 
 .popup__overlay {
@@ -13,21 +21,16 @@
     left:0;
     right:0;
     background-color:#000;
-    opacity: 60%;
-    z-index:2;
+    opacity: 64%;
 }
 .popup__container {
-    position: fixed;
+    position: relative;
+    width: 100%;
     max-width: 366px;
     background-color:#fff;
-    z-index:3;
-    box-shadow: 0px 0px 55px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 0px 55px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 32px;
-    top: calc(50% - 158px);
-    margin: auto;
-    left: 0;
-    right: 0;
 }
 
 .popup__description {
@@ -78,6 +81,17 @@
     padding: 4px 0 8px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.popup__image-container {
+    
+}
+
+.popup__image {
+    max-width: 90vw;
+    max-height: 75vh;
+    position: fixed;
+    display: none;
 }
 
 

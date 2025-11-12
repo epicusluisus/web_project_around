@@ -13,9 +13,8 @@
     content: '\00A9'
 }
 
+
 /* 00A9 = copyright */
-
-
 @media screen and (max-width: 480px) {
     .footer {
         padding: 48px 0 32px;

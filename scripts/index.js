@@ -1,8 +1,9 @@
-let editButton = document.querySelector(".header__profile-button");
-let closeButton = document.querySelector(".popup__close-button");
-let saveButton = document.querySelector(".popup__save-button");
-let popup = document.querySelector(".popup");
+const editButton = document.querySelector(".header__profile-button");
+const closeButton = document.querySelector(".popup__close-button");
+const saveButton = document.querySelector(".popup__save-button");
+const popup = document.querySelector(".popup");
 const contentGrid = document.querySelector(".content__grid");
+const noPostText = document.querySelector(".content__no-post");
 
 let nameInput = document.querySelector("#input-name");
 let jobInput = document.querySelector("#input-tag");
@@ -11,13 +12,13 @@ let job = document.querySelector(".header__profile-tag");
 let form = document.querySelector(".popup__container");
 
 function openpopup() {
-  popup.classList.add("popup_opened");
+  popup.classList.remove("popup_closed");
   nameInput.value = name.textContent;
   jobInput.value = job.textContent;
 }
 
 function closepopup() {
-  popup.classList.remove("popup_opened");
+  popup.classList.add("popup_closed");
 }
 
 editButton.addEventListener("click", openpopup);
@@ -31,6 +32,12 @@ function submitForm(e) {
 }
 
 
+
+function noPost() {
+  noPostText.classList.remove("popup_closed");
+}
+
+
 function addCard(cardTitle, cardLink) {
   const cardTemplate = document.querySelector("#card-template").content;
   const card = cardTemplate.querySelector(".card").cloneNode(true);
@@ -38,19 +45,22 @@ function addCard(cardTitle, cardLink) {
   card.querySelector(".card__title").textContent = cardTitle;
   card.querySelector(".card__image").src = cardLink;
   card.querySelector(".card__image").alt = cardTitle;
+
   card.querySelector(".card__like").addEventListener("click", function (e) {
     e.target.classList.toggle("card__like_active");
   })
+  card.querySelector(".card__delete-button").addEventListener("click", function (e) {
+    e.target.parentElement.remove();
+    if (contentGrid.children.length == 0) {
+      console.log("bro");
+      noPost();
+    }
+  })
+  
 
   contentGrid.append(card);
 }
 
-
-function addInitialCards() {
-  initialCards.forEach((item) => {
-    addCard(item.title, item.link);
-  })
-}
 
 const initialCards = [
   {
@@ -79,4 +89,9 @@ const initialCards = [
   },
 ];
 
+function addInitialCards() {
+  initialCards.forEach((item) => {
+    addCard(item.title, item.link);
+  })
+}
 addInitialCards();

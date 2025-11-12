@@ -13,7 +13,7 @@
     <div class="page">
       <!--Pop-up Timezz-->
       <!--edit profile popup-->
-      <div class="popup">
+      <div class="popup popup_closed">
         <div class="popup__overlay"></div>
         <form class="popup__container">
           <button class="popup__close-button button"></button>
@@ -38,31 +38,10 @@
         </form>
       </div>
 
-      <!--edit add photo popup-->
-      <div class="popup">
-        <div class="popup__overlay"></div>
-        <form class="popup__container">
-          <button class="popup__close-button button"></button>
-          <p class="popup__description">Nuevo lugar</p>
-          <fieldset class="popup__form">
-            <input
-              class="popup__form-element"
-              placeholder="Nombre"
-              type="text"
-              id="input-name"
-            />
-            <input
-              class="popup__form-element"
-              placeholder="Acerca de mí"
-              type="text"
-              id="input-tag"
-            />
-          </fieldset>
-          <button class="popup__save-button button" type="submit">
-            Guardar
-          </button>
-        </form>
-      </div>
+      <div class="popup__image-container">
+        <img class="popup__image" alt="" src="images/lago-louise.jpg">
+      </div>div class="popup__image-container">
+
 
       <!--header n' nav Timezz-->
       <nav class="nav">
@@ -88,8 +67,8 @@
 
       <!--Content Timezz-->
       <main class="content">
+        <p class="content__no-post popup_closed">No hay publicaciones</p>
         <div class="content__grid">
-          
         </div>
       </main>
       <footer class="footer">
@@ -100,10 +79,11 @@
     <template id="card-template">
       <div class="card">
         <img
-                class="card__image"
-                src=""
-                alt=""
-              />
+          class="card__image"
+          src=""
+          alt=""
+        />
+        <button class="card__delete-button button"></button>
         <div class="card__footer">
           <p class="card__title"></p>
           <button class="card__like button"></button>
