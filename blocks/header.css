@@ -1,5 +1,5 @@
 .header {
-  padding: 32px 0;
+  padding: 24px 0;
   width: 100%;
   display: grid;
   grid-template-columns: auto auto 1fr;
@@ -35,7 +35,7 @@
   white-space: nowrap;
 }
 
-.header__profile-button {
+.header__edit-button {
   height: 24px;
   width: 24px;
   background: url(../images/edit-button.svg);
@@ -70,7 +70,6 @@
 /* --- --- */
 @media screen and (max-width: 800px) {
   .header {
-    padding: 24px 0;
     gap: 16px;
   }
 
@@ -89,14 +88,12 @@
 
 @media screen and (max-width: 480px) {
   .header {
-    padding: 30px 0;
     grid-template-columns: 1fr;
     grid-template-areas:
       "image"
       "profile"
       "button";
     justify-items: center;
-    gap: 24px;
   }
 
   .header__avatar {
@@ -112,7 +109,7 @@
     font-size: 14px;
   }
 
-  .header__profile-button {
+  .header__edit-button {
     width: 18px;
     height: 18px;
   }

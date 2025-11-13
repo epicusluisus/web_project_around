@@ -1,5 +1,5 @@
 .content {
-  min-height:  calc(100vh - 398px);
+  min-height:  calc(100vh - 373px);
 }
 
 .content__grid {
@@ -13,7 +13,7 @@
   font-size: 18px;
   font-weight: 400;
   justify-self: center;
-  padding-top: 24px;
+  padding-top: 32px;
 }
 
 .content__no-post__hidden {
@@ -23,7 +23,7 @@
 /* --- --- */
 @media screen and (max-width: 800px) {
   .content {
-    min-height: calc(100vh - 362px);
+    min-height: calc(100vh - 353px);
   }
 
   .content__grid {
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 480px) {
 .content {
-  min-height: calc(100vh - 494px);
+  min-height: calc(100vh - 459px);
 }
 
   .content__grid {

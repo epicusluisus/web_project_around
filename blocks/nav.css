@@ -1,14 +1,14 @@
 .nav {
-  padding: 16px 0 24px;
+  padding: 16px 0 18px;
   border-bottom: 1px solid #545454;
 }
 
 .nav__logo {
-  max-width: 152px;
+  max-width: 140px;
 }
 
 @media screen and (max-width: 480px) {
   .nav__logo {
-    max-width: 126px;
+    max-width: 120px;
   }
 }

@@ -11,37 +11,6 @@
   </head>
   <body>
     <div class="page">
-      <!--Pop-up Timezz-->
-      <div class="popup popup_closed">
-        <div class="popup__overlay"></div>
-        <form class="popup__container">
-          <button class="popup__close-button button"></button>
-          <p class="popup__description">Editar perfil</p>
-          <fieldset class="popup__form">
-            <input
-              class="popup__form-element"
-              placeholder="Nombre"
-              type="text"
-              id="input-name"
-            />
-            <input
-              class="popup__form-element"
-              placeholder="Acerca de mí"
-              type="text"
-              id="input-tag"
-            />
-          </fieldset>
-          <button class="popup__save-button button" type="submit">
-            Guardar
-          </button>
-        </form>
-      </div>
-
-      <div class="popup__image-container">
-        <img class="popup__image" alt="" src="images/lago-louise.jpg">
-      </div>
-
-
       <!--header n' nav Timezz-->
       <nav class="nav">
         <img
@@ -58,10 +27,10 @@
         />
         <div class="header__profile">
           <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
-          <button class="header__profile-button button"></button>
+          <button class="header__edit-button button"></button>
           <p class="header__profile-tag">Diseñador web fullstack</p>
         </div>
-        <button class="header__add-button button" type="submit"></button>
+        <button class="header__add-button button"></button>
       </header>
 
       <!--Content Timezz-->
@@ -87,6 +56,50 @@
           <p class="card__title"></p>
           <button class="card__like"></button>
         </div>
+      </div>
+    </template>
+
+
+
+    <template id="popup-template">
+      <div class="popup">
+        <div class="popup__overlay"></div>
+      </div>
+    </template>
+
+    <template id="popup__form-template">
+      <form class="popup__form">
+          <button class="popup__close-button button"></button>
+          <p class="popup__description"></p>
+          <fieldset class="popup__field">
+            <input
+              class="popup__field-element"
+              placeholder=""
+              type="text"
+              id="input-name"
+            />
+            <input
+              class="popup__field-element"
+              placeholder=""
+              type="text"
+              id="input-tag"
+            />
+          </fieldset>
+          <button class="popup__save-button button" type="submit">
+            Guardar
+          </button>
+      </form>
+    </template>
+
+    <template id="popup__image-template">
+      <div class=" popup__image-container">
+        <img
+          class="popup__image"
+          src=""
+          alt=""
+          />
+        <button class="popup__image-close-button button"></button>
+        <p class="popup__image-text"></p>
       </div>
     </template>
 
