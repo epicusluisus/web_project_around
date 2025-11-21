@@ -5,16 +5,16 @@ Este se ha sido creado con la finalidad de de demostar habilidades de diseño ad
 
 ## Principales funcionalidades:
 ### Botones funcionales:
-    Se puede dar like a las imágenes así como también eliminarse.
+Se puede dar like a las imágenes así como también eliminarse.
 
 ### Personzalización de perfil:
-    Funcionalidad de cargar imagenes mediante enlaces, así como cambiar el nombre y descripción de perfil.
+Funcionalidad de cargar imagenes mediante enlaces, así como cambiar el nombre y descripción de perfil.
 
 ### Creación de publicaciones:
-    Comparte un numero ilimitado de imágenes en la pagina junto con un titulo. Acumula, crea un moodboard, inspírate o algo.
+Comparte un numero ilimitado de imágenes en la pagina junto con un titulo. Acumula, crea un moodboard, inspírate o algo.
 
 ### Diseño adaptativo:
-    Todas las imágenes, todos los popups y cada detalle ha sido inspeccionado cuiadosamente para que se aprecie perfectmente en todos los dispositivos, desde una pantalla 1440p hasta un celular de gama baja (incluso un 3ds, aunque los tiempos de carga en este dispositivo son abismalmente lentos).
+Todas las imágenes, todos los popups y cada detalle ha sido inspeccionado cuiadosamente para que se aprecie perfectmente en todos los dispositivos, desde una pantalla 1440p hasta un celular de gama baja (incluso un 3ds, aunque desafortunadamnete el navegador de 3ds no corre javascript).
 
 
 Este proyecto se hizo mediante el uso de media queries, HTML, CSS y Javascript. 

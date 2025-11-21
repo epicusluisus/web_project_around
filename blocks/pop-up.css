@@ -129,6 +129,7 @@
 
     .popup__image {
         max-width: 1080px;
+        max-height: 85vh;
         width: 100%;
     }
 
@@ -138,6 +139,8 @@
         "b b b"
         ". c .";
         grid-template-columns: 16px auto 16px;
+        gap: 6px 4px;
+
     }
 
     .popup__image-text {
