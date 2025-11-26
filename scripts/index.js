@@ -148,3 +148,25 @@ function renderBigImage(title, url) {
   openPopupOverlay();
   popup.append(imageContainer);
 }
+
+//konami code do something
+let konamiCodePosition = 0;
+const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
+
+document.addEventListener('keydown', function(e) {
+  
+  if (e.key.toLowerCase() === konamicode[konamiCodePosition]) {
+    konamiCodePosition = konamiCodePosition + 1;
+  } else if (e.key.toLowerCase() !== konamicode[konamiCodePosition]) {
+      if (e.key.toLowerCase() === "arrowup") {
+        konamiCodePosition = 1;
+      } else {
+          konamiCodePosition = 0;
+        }
+  }
+
+  if (konamiCodePosition === 10) {
+    addInitialCards();
+    alert("Hadoken");
+  }
+})
