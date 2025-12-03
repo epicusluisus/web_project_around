@@ -1,6 +1,5 @@
 .card {
   display: grid;
-  background-color: #fff;
   grid-auto-rows: auto 1fr;
   border-radius: 10px;
   position: relative;
@@ -19,6 +18,8 @@
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
 }
 
 .card__title {
@@ -53,6 +54,8 @@
   opacity: 0%;
 }
 
+
+/* pseudo */
 .card__like:hover {
   transform: scale(1.2);
 }
@@ -65,4 +68,5 @@
 
 .card:hover .card__delete-button {
   opacity: 100%;
+  transition: all 0.4s ease-out;
 }
