@@ -4,6 +4,7 @@ const noPostText = document.querySelector(".content__no-post");
 
 const noPost = () => noPostText.classList.remove("content__no-post__hidden");
 const hideNoPost = () => noPostText.classList.add("content__no-post__hidden");
+const checkNoPost = () => contentGrid.children.length === 0 ? noPost() : hideNoPost();
 
 function addCard(cardTitle, cardLink) {
   const cardTemplate = document.querySelector("#card-template").content;
@@ -18,9 +19,7 @@ function addCard(cardTitle, cardLink) {
   })
   card.querySelector(".card__delete-button").addEventListener("click", (e) => {
     e.target.parentElement.remove();
-    if (contentGrid.children.length == 0) {
-      noPost();
-    }
+    checkNoPost();
   })
   contentGrid.prepend(card);
 
@@ -28,7 +27,7 @@ function addCard(cardTitle, cardLink) {
     console.log(e.target.alt, e.target.src);
     renderBigImage(e.target.alt, e.target.src);
   })
-  contentGrid.children.length >= 1 ? hideNoPost() : console.log("dale");
+  checkNoPost();
 }
 
 const initialCards = [
@@ -81,7 +80,6 @@ function openForm(title, ph1, ph2) {
   const name = popupForm.querySelector("#input-name");
   const tag = popupForm.querySelector("#input-tag");
 
-
   name.placeholder = ph1;
   tag.placeholder = ph2;
 
@@ -94,8 +92,7 @@ function openForm(title, ph1, ph2) {
     }
     (e).preventDefault();
     closeForm();
-  })
-  
+  })  
   function closeForm() {
     popup.remove();
     popupForm.remove();
@@ -123,18 +120,17 @@ editButton.addEventListener("click", editProfile);
 addButton.addEventListener("click", addPhoto);
 
 function renderBigImage(title, url) {
-  const bigImage = document.querySelector("#popup__image-template").content;
-  const imageContainer = bigImage.querySelector(".popup__image-container").cloneNode(true);
+  const bigImage = document.querySelector("#big-image-template").content;
+  const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
 
-  imageContainer.querySelector(".popup__image").src = url;
-  imageContainer.querySelector(".popup__image").alt = title;
-  imageContainer.querySelector(".popup__image-text").textContent = title.slice(9);
-  imageContainer.querySelector(".popup__image-close-button").addEventListener("click", (e) => {
+  imageContainer.querySelector(".big-image__image").src = url;
+  imageContainer.querySelector(".big-image__image").alt = title;
+  imageContainer.querySelector(".big-image__text").textContent = title.slice(9);
+  imageContainer.querySelector(".big-image__close-button").addEventListener("click", (e) => {
     popup.remove();
     imageContainer.remove();
     e.preventDefault();
   })
-
   openPopupOverlay();
   popup.append(imageContainer);
 }
