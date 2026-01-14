@@ -16,8 +16,8 @@ Comparte un numero ilimitado de imágenes en la pagina junto con un titulo. Acum
 ### Diseño adaptativo:
 Todas las imágenes, todos los popups y cada detalle ha sido inspeccionado cuiadosamente para que se aprecie perfectmente en todos los dispositivos, desde una pantalla 1440p hasta un celular de gama baja (incluso un 3ds, aunque desafortunadamnete el navegador de 3ds no corre javascript).
 
-### Secuencia de códigos con teclado:
-Se añadió una funcionalidad para detectar inputs del teclado y agregar códigos secretos. Intenta intoducir el código Konami:
+### Atajos de teclado:
+Diseño totalmente intuitivo: envía formularios con la tecla enter, cierra otros con escape, etcétera. También se añadió una funcionalidad para detectar secuencias completas y agregar códigos secretos. Intenta intoducir el código Konami:
 (arriba, arriba, abajo, abajo, izquierda, derecha, izquierda, derecha, a, b)
 
 Este proyecto se hizo mediante el uso de media queries, HTML, CSS y Javascript. 

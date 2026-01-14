@@ -24,7 +24,6 @@ function addCard(cardTitle, cardLink) {
   contentGrid.prepend(card);
 
   card.querySelector(".card__image").addEventListener("click", (e) => {
-    console.log(e.target.alt, e.target.src);
     renderBigImage(e.target.alt, e.target.src);
   })
   checkNoPost();
@@ -65,12 +64,31 @@ const addInitialCards = () => {
 addInitialCards();
 
 //forms and overlays
-const popupTemplate = document.querySelector("#popup-template").content;
-const popup = popupTemplate.querySelector(".popup").cloneNode(true);
-function openPopupOverlay() {
-  magicButton.append(popup);
+const popup = document.querySelector(".popup");
+const popupOverlay = popup.querySelector(".popup__overlay");
+
+
+
+const master = document.getElementsByTagName("html")[0];
+
+const openPopupOverlay = () => {
+  popup.classList.remove("popup_closed");
+  master.style.overflow = "hidden";
+}
+const closePopupOverlay = () => {
+  popup.classList.add("popup_closed");
+  master.style.overflow = "visible";
 }
 
+const openForm = (formType) => {
+  document.querySelector(formType).classList.remove("popup_closed");
+}
+
+
+
+
+
+/*
 function openForm(title, ph1, ph2) {
   openPopupOverlay();
   const popupFormTemplate = document.querySelector("#popup__form-template").content;
@@ -94,7 +112,7 @@ function openForm(title, ph1, ph2) {
     closeForm();
   })  
   function closeForm() {
-    popup.remove();
+    closePopupOverlay();
     popupForm.remove();
   }
   popupForm.querySelector(".popup__close-button").addEventListener("click", function (e) {
@@ -102,6 +120,7 @@ function openForm(title, ph1, ph2) {
   })
   popup.append(popupForm);
 }
+*/
 
 //the shitshow
 //begins...
@@ -110,14 +129,7 @@ const addButton = document.querySelector(".header__add-button");
 const closeButton = document.querySelector(".popup__close-button");
 const saveButton = document.querySelector(".pop__save-button");
 
-let userName = document.querySelector(".header__profile-name");
-let userTag = document.querySelector(".header__profile-tag");
-
-const editProfile = () => openForm("Editar perfil", "Nombre", "Acerca de mi");
-const addPhoto = () => openForm("Nuevo Lugar", "Título", "Enlace a la imagen");
-
-editButton.addEventListener("click", editProfile);
-addButton.addEventListener("click", addPhoto);
+editButton.addEventListener("click", openForm("#form__edit"));
 
 function renderBigImage(title, url) {
   const bigImage = document.querySelector("#big-image-template").content;
@@ -127,7 +139,7 @@ function renderBigImage(title, url) {
   imageContainer.querySelector(".big-image__image").alt = title;
   imageContainer.querySelector(".big-image__text").textContent = title.slice(9);
   imageContainer.querySelector(".big-image__close-button").addEventListener("click", (e) => {
-    popup.remove();
+    closePopupOverlay();
     imageContainer.remove();
     e.preventDefault();
   })
@@ -135,7 +147,22 @@ function renderBigImage(title, url) {
   popup.append(imageContainer);
 }
 
-//extras 
+
+//key shorcuts
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closePopupOverlay();
+  }
+})
+
+document.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    closePopupOverlay();
+  }
+})
+
+
+//konami code shorcut (0 _ 0)
 let konamiCodePosition = 0;
 const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
 

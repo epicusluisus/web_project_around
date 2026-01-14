@@ -11,6 +11,33 @@
   </head>
   <body>
     <div class="page">
+      <div class="popup popup_closed">
+        <div class="popup__overlay">
+          <form class="popup__form popup_closed" id="form__edit">
+            <button class="popup__close-button button"></button>
+            <p class="popup__description">Editar perfil</p>
+            <fieldset class="popup__field">
+              <input
+                class="popup__field-element"
+                placeholder="Nombre"
+                type="text"
+                id="input-name"
+                required
+              />
+              <input
+                class="popup__field-element"
+                placeholder="Acerca de mi"
+                type="text"
+                id="input-tag"
+                required
+              />
+            </fieldset>
+            <button class="popup__save-button button">
+              Guardar
+            </button>
+          </form>
+        </div>
+      </div>
       <!--header n' nav Timezz-->
       <nav class="nav">
         <img
@@ -57,38 +84,6 @@
           <button class="card__like"></button>
         </div>
       </div>
-    </template>
-
-    <template id="popup-template">
-      <div class="popup">
-        <div class="popup__overlay"></div>
-      </div>
-    </template>
-
-    <template id="popup__form-template">
-      <form class="popup__form">
-          <button class="popup__close-button button"></button>
-          <p class="popup__description"></p>
-          <fieldset class="popup__field">
-            <input
-              class="popup__field-element"
-              placeholder=""
-              type="text"
-              id="input-name"
-              required
-            />
-            <input
-              class="popup__field-element"
-              placeholder=""
-              type="text"
-              id="input-tag"
-              required
-            />
-          </fieldset>
-          <button class="popup__save-button button">
-            Guardar
-          </button>
-      </form>
     </template>
 
     <template id="big-image-template">
