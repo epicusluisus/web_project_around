@@ -12,8 +12,10 @@
   <body>
     <div class="page">
       <div class="popup popup_closed">
-        <div class="popup__overlay">
-          <form class="popup__form popup_closed" id="form__edit">
+        <div class="popup__overlay"></div>
+
+        <!--name form-->
+        <form class="popup__form popup_closed" id="formEditProfile">
             <button class="popup__close-button button"></button>
             <p class="popup__description">Editar perfil</p>
             <fieldset class="popup__field">
@@ -21,14 +23,18 @@
                 class="popup__field-element"
                 placeholder="Nombre"
                 type="text"
-                id="input-name"
+                id="inputName"
+                min-length="2"
+                max-length="40"
                 required
               />
               <input
                 class="popup__field-element"
                 placeholder="Acerca de mi"
                 type="text"
-                id="input-tag"
+                id="inputTag"
+                min-length="2"
+                max-length="120"
                 required
               />
             </fieldset>
@@ -36,7 +42,33 @@
               Guardar
             </button>
           </form>
-        </div>
+
+          <!--foto form-->
+          <form class="popup__form popup_closed" id="formAddPlace">
+            <button class="popup__close-button button"></button>
+            <p class="popup__description">Nuevo Lugar</p>
+            <fieldset class="popup__field">
+              <input
+                class="popup__field-element"
+                placeholder="Titulo de la imágen"
+                type="text"
+                id="inputTitle"
+                min-length="2"
+                max-length="32"
+                required
+              />
+              <input
+                class="popup__field-element"
+                placeholder="Url de la imágen"
+                type="url"
+                id="inputUrl"
+                required
+              />
+            </fieldset>
+            <button class="popup__save-button button">
+              Guardar
+            </button>
+          </form>
       </div>
       <!--header n' nav Timezz-->
       <nav class="nav">

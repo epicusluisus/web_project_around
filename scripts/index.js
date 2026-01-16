@@ -66,73 +66,44 @@ addInitialCards();
 //forms and overlays
 const popup = document.querySelector(".popup");
 const popupOverlay = popup.querySelector(".popup__overlay");
+const openPopupOverlay = () => popup.classList.remove("popup_closed");
+const closePopupOverlay = () => popup.classList.add("popup_closed");
 
-
-
-const master = document.getElementsByTagName("html")[0];
-
-const openPopupOverlay = () => {
-  popup.classList.remove("popup_closed");
-  //master.style.overflow = "hidden";
-}
-const closePopupOverlay = () => {
-  popup.classList.add("popup_closed");
-  //master.style.overflow = "visible";
-}
-/*
-const openForm = (formType) => {
-  document.querySelector(formType).classList.remove("popup_closed");
-}
-*/
-
-
-/*
-function openForm(title, ph1, ph2) {
-  openPopupOverlay();
-  const popupFormTemplate = document.querySelector("#popup__form-template").content;
-  const popupForm = popupFormTemplate.querySelector(".popup__form").cloneNode(true);
-
-  popupForm.querySelector(".popup__description").textContent = title;
-  const name = popupForm.querySelector("#input-name");
-  const tag = popupForm.querySelector("#input-tag");
-
-  name.placeholder = ph1;
-  tag.placeholder = ph2;
-
-  popupForm.querySelector(".popup__save-button").addEventListener("click", function (e) {
-    if (name.placeholder == "Título") {
-      addCard(name.value, tag.value);
-    } else if (name.placeholder == "Nombre") {
-      userName.textContent = name.value;
-      userTag.textContent = tag.value;
-    }
-    (e).preventDefault();
-    closeForm();
-  })  
-  function closeForm() {
-    closePopupOverlay();
-    popupForm.remove();
-  }
-  popupForm.querySelector(".popup__close-button").addEventListener("click", function (e) {
-    closeForm();
-  })
-  popup.append(popupForm);
-}
-*/
-
-//the shitshow
-//begins...
 const editButton = document.querySelector(".header__edit-button");
 const addButton = document.querySelector(".header__add-button");
 const closeButton = document.querySelector(".popup__close-button");
 const saveButton = document.querySelector(".pop__save-button");
 
+const formAddPlace = document.forms.formAddPlace;
+const formEditProfile = document.forms.formEditProfile
+
+const openForm = (formId) => {
+  formId.classList.remove("popup_closed");
+}
+
+editButton.addEventListener("click", () => {
+  openPopupOverlay();
+  openForm(formEditProfile);
+});
+
+addButton.addEventListener("click", () => {
+  openPopupOverlay();
+  openForm(formAddPlace);
+})
+
+//the shitshow
+//begins...
 const bigImage = document.querySelector("#big-image-template").content;
-  const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
-  const closeBigImage = () => {
-    closePopupOverlay();
-    imageContainer.remove();
-  }
+const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
+let isBigImageActive = false;
+
+const closeBigImage = () => {
+  formAddPlace.classList.add("popup_closed");
+  formEditProfile.classList.add("popup_closed");
+  closePopupOverlay();
+  imageContainer.remove();
+  isBigImageActive = false;
+}
 
 function renderBigImage(title, url) {
   imageContainer.querySelector(".big-image__image").src = url;
@@ -141,10 +112,12 @@ function renderBigImage(title, url) {
   imageContainer.querySelector(".big-image__close-button").addEventListener("click", closeBigImage)
   openPopupOverlay();
   popup.append(imageContainer);
+  isBigImageActive = true;
 }
 
 
 //key shorcuts
+document.addEventListener("scroll", closeBigImage);
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeBigImage();
