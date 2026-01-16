@@ -73,19 +73,17 @@ const master = document.getElementsByTagName("html")[0];
 
 const openPopupOverlay = () => {
   popup.classList.remove("popup_closed");
-  master.style.overflow = "hidden";
+  //master.style.overflow = "hidden";
 }
 const closePopupOverlay = () => {
   popup.classList.add("popup_closed");
-  master.style.overflow = "visible";
+  //master.style.overflow = "visible";
 }
-
+/*
 const openForm = (formType) => {
   document.querySelector(formType).classList.remove("popup_closed");
 }
-
-
-
+*/
 
 
 /*
@@ -129,20 +127,18 @@ const addButton = document.querySelector(".header__add-button");
 const closeButton = document.querySelector(".popup__close-button");
 const saveButton = document.querySelector(".pop__save-button");
 
-editButton.addEventListener("click", openForm("#form__edit"));
+const bigImage = document.querySelector("#big-image-template").content;
+  const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
+  const closeBigImage = () => {
+    closePopupOverlay();
+    imageContainer.remove();
+  }
 
 function renderBigImage(title, url) {
-  const bigImage = document.querySelector("#big-image-template").content;
-  const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
-
   imageContainer.querySelector(".big-image__image").src = url;
   imageContainer.querySelector(".big-image__image").alt = title;
   imageContainer.querySelector(".big-image__text").textContent = title.slice(9);
-  imageContainer.querySelector(".big-image__close-button").addEventListener("click", (e) => {
-    closePopupOverlay();
-    imageContainer.remove();
-    e.preventDefault();
-  })
+  imageContainer.querySelector(".big-image__close-button").addEventListener("click", closeBigImage)
   openPopupOverlay();
   popup.append(imageContainer);
 }
@@ -151,13 +147,13 @@ function renderBigImage(title, url) {
 //key shorcuts
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    closePopupOverlay();
+    closeBigImage();
   }
 })
 
 document.addEventListener("click", (e) => {
   if (e.target === popupOverlay) {
-    closePopupOverlay();
+    closeBigImage();
   }
 })
 
