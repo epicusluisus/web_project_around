@@ -63,7 +63,9 @@ const addInitialCards = () => {
 }
 addInitialCards();
 
-//forms and overlays
+
+//Forms and overlays
+// 
 const popup = document.querySelector(".popup");
 const popupOverlay = popup.querySelector(".popup__overlay");
 const openPopupOverlay = () => popup.classList.remove("popup_closed");
@@ -72,10 +74,12 @@ const closePopupOverlay = () => popup.classList.add("popup_closed");
 const editButton = document.querySelector(".header__edit-button");
 const addButton = document.querySelector(".header__add-button");
 const closeButton = document.querySelector(".popup__close-button");
-const saveButton = document.querySelector(".pop__save-button");
+const saveButton = document.querySelector(".popup__save-button");
+let name = document.querySelector(".header__profile-name");
+let tag = document.querySelector(".header__profile-tag");
 
 const formAddPlace = document.forms.formAddPlace;
-const formEditProfile = document.forms.formEditProfile
+const formEditProfile = document.forms.formEditProfile;
 
 const openForm = (formId) => {
   formId.classList.remove("popup_closed");
@@ -91,8 +95,21 @@ addButton.addEventListener("click", () => {
   openForm(formAddPlace);
 })
 
-//the shitshow
-//begins...
+formAddPlace.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addCard(formAddPlace.inputTitle.value, formAddPlace.inputUrl.value);
+  closeBigImage();
+})
+
+formEditProfile.addEventListener("submit", (e) => {
+  e.preventDefault();
+  name.textContent = formEditProfile.inputName.value;
+  tag.textContent = formEditProfile.inputTag.value;
+  closeBigImage();
+
+})
+
+//render the big image
 const bigImage = document.querySelector("#big-image-template").content;
 const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
 let isBigImageActive = false;
