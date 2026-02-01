@@ -22,9 +22,8 @@ function addCard(cardTitle, cardLink) {
     checkNoPost();
   })
   contentGrid.prepend(card);
-
   card.querySelector(".card__image").addEventListener("click", (e) => {
-    renderBigImage(e.target.alt, e.target.src);
+    renderBigImage(e.target.alt, e.target.src, e.target);
   })
   checkNoPost();
 }
@@ -65,7 +64,6 @@ addInitialCards();
 
 
 //Forms and overlays
-// 
 const popup = document.querySelector(".popup");
 const popupOverlay = popup.querySelector(".popup__overlay");
 const openPopupOverlay = () => popup.classList.remove("popup_closed");
@@ -73,11 +71,18 @@ const closePopupOverlay = () => popup.classList.add("popup_closed");
 
 const editButton = document.querySelector(".header__edit-button");
 const addButton = document.querySelector(".header__add-button");
-const closeButton = document.querySelector(".popup__close-button");
 const saveButton = document.querySelector(".popup__save-button");
+const closeButton = document.querySelectorAll(".popup__close-button");
+closeButton.forEach((item) => {
+  item.addEventListener("click", () => {
+    closeBigImage();
+    formAddPlace.reset();
+    formEditProfile.reset();
+  })
+})
+
 let name = document.querySelector(".header__profile-name");
 let tag = document.querySelector(".header__profile-tag");
-
 const formAddPlace = document.forms.formAddPlace;
 const formEditProfile = document.forms.formEditProfile;
 
@@ -99,6 +104,7 @@ formAddPlace.addEventListener("submit", (e) => {
   e.preventDefault();
   addCard(formAddPlace.inputTitle.value, formAddPlace.inputUrl.value);
   closeBigImage();
+  formAddPlace.reset();
 })
 
 formEditProfile.addEventListener("submit", (e) => {
@@ -106,12 +112,15 @@ formEditProfile.addEventListener("submit", (e) => {
   name.textContent = formEditProfile.inputName.value;
   tag.textContent = formEditProfile.inputTag.value;
   closeBigImage();
-
+  formEditProfile.reset();
 })
+
 
 //render the big image
 const bigImage = document.querySelector("#big-image-template").content;
 const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
+
+let currentImage = "";
 let isBigImageActive = false;
 
 const closeBigImage = () => {
@@ -122,7 +131,7 @@ const closeBigImage = () => {
   isBigImageActive = false;
 }
 
-function renderBigImage(title, url) {
+function renderBigImage(title, url, current) {
   imageContainer.querySelector(".big-image__image").src = url;
   imageContainer.querySelector(".big-image__image").alt = title;
   imageContainer.querySelector(".big-image__text").textContent = title.slice(9);
@@ -130,8 +139,13 @@ function renderBigImage(title, url) {
   openPopupOverlay();
   popup.append(imageContainer);
   isBigImageActive = true;
+  currentImage = current;
 }
 
+
+//form validation
+//should i start soon;
+//yes  should
 
 //key shorcuts
 document.addEventListener("scroll", closeBigImage);
@@ -164,5 +178,17 @@ document.addEventListener('keydown', function(e) {
   if (konamiCodePosition === 10) {
     addInitialCards();
     alert("Hadóóóken");
+  }
+   
+  //change image with keyboard shorctz
+  if (isBigImageActive === true && e.key.toLowerCase() === "arrowleft") {
+    let previousImage = currentImage.parentElement.previousElementSibling.children[0];
+    renderBigImage(previousImage.alt, previousImage.src, previousImage);
+  }
+    
+
+  if (isBigImageActive === true && e.key.toLowerCase() === "arrowright") {
+    let nextImage = currentImage.parentElement.nextElementSibling.children[0];
+    renderBigImage(nextImage.alt, nextImage.src, nextImage);
   }
 })
