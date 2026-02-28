@@ -82,6 +82,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
+.popup__field-element:valid {
+
+    background-color: rgb(232, 240, 254);
+}
+
 /* --- --- --- */
 @media  screen and (max-width: 500px) {
     .popup__close-button {

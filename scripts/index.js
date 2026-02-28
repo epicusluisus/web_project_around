@@ -1,6 +1,8 @@
 const magicButton = document.querySelector(".page");
 const contentGrid = document.querySelector(".content__grid");
 const noPostText = document.querySelector(".content__no-post");
+let name = document.querySelector(".header__profile-name");
+let tag = document.querySelector(".header__profile-tag");
 
 const noPost = () => noPostText.classList.remove("content__no-post__hidden");
 const hideNoPost = () => noPostText.classList.add("content__no-post__hidden");
@@ -12,7 +14,7 @@ function addCard(cardTitle, cardLink) {
 
   card.querySelector(".card__title").textContent = cardTitle;
   card.querySelector(".card__image").src = cardLink;
-  card.querySelector(".card__image").alt = `Photo of ${cardTitle}`;
+  card.querySelector(".card__image").alt = `Photo of ${cardTitle} by ${name.textContent}`;
 
   card.querySelector(".card__like").addEventListener("click", (e) => {
     e.target.classList.toggle("card__like_active");
@@ -55,12 +57,9 @@ const initialCards = [
   }
 ];
 
-const addInitialCards = () => {
-  initialCards.forEach((item) => {
-    addCard(item.title, item.link);
-  })
-}
-addInitialCards();
+initialCards.forEach((item) => {
+  addCard(item.title, item.link);
+})
 
 
 //Forms and overlays
@@ -81,8 +80,6 @@ closeButton.forEach((item) => {
   })
 })
 
-let name = document.querySelector(".header__profile-name");
-let tag = document.querySelector(".header__profile-tag");
 const formAddPlace = document.forms.formAddPlace;
 const formEditProfile = document.forms.formEditProfile;
 
@@ -120,6 +117,7 @@ formEditProfile.addEventListener("submit", (e) => {
 const bigImage = document.querySelector("#big-image-template").content;
 const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
 
+//a little extra spice
 let currentImage = "";
 let isBigImageActive = false;
 
@@ -144,8 +142,8 @@ function renderBigImage(title, url, current) {
 
 
 //form validation
-//should i start soon;
-//yes  should
+//should i start soon?
+//yes i should
 
 //key shorcuts
 document.addEventListener("scroll", closeBigImage);
@@ -176,8 +174,9 @@ document.addEventListener('keydown', function(e) {
   }
 
   if (konamiCodePosition === 10) {
-    addInitialCards();
-    alert("Hadóóóken");
+    addCard("Hollow Knight", "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d0/02/e3/d002e325-299d-f87f-a737-7d7ad3c628ae/840095520225.jpg/1200x1200bf-60.jpg");
+    addCard("Enter the Gungeon", "https://image.api.playstation.com/vulcan/ap/rnd/202010/1205/7iRqnxpwQtVuEFuOjBAW1hFz.png");
+    alert("Cheat Code Activated");
   }
    
   //change image with keyboard shorctz
@@ -186,7 +185,6 @@ document.addEventListener('keydown', function(e) {
     renderBigImage(previousImage.alt, previousImage.src, previousImage);
   }
     
-
   if (isBigImageActive === true && e.key.toLowerCase() === "arrowright") {
     let nextImage = currentImage.parentElement.nextElementSibling.children[0];
     renderBigImage(nextImage.alt, nextImage.src, nextImage);
