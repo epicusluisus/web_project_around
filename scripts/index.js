@@ -14,7 +14,7 @@ function addCard(cardTitle, cardLink) {
 
   card.querySelector(".card__title").textContent = cardTitle;
   card.querySelector(".card__image").src = cardLink;
-  card.querySelector(".card__image").alt = `Photo of ${cardTitle} by ${name.textContent}`;
+  card.querySelector(".card__image").alt = `Photo of ${cardTitle}`;
 
   card.querySelector(".card__like").addEventListener("click", (e) => {
     e.target.classList.toggle("card__like_active");
@@ -140,11 +140,6 @@ function renderBigImage(title, url, current) {
   currentImage = current;
 }
 
-
-//form validation
-//should i start soon?
-//yes i should
-
 //key shorcuts
 document.addEventListener("scroll", closeBigImage);
 document.addEventListener("keydown", (e) => {
@@ -159,7 +154,7 @@ document.addEventListener("click", (e) => {
   }
 })
 
-
+/*
 //konami code shorcut (0 _ 0)
 let konamiCodePosition = 0;
 const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
@@ -179,7 +174,7 @@ document.addEventListener('keydown', function(e) {
     alert("Cheat Code Activated");
   }
    
-  //change image with keyboard shorctz
+  //navigate images with keyboard shortcuts
   if (isBigImageActive === true && e.key.toLowerCase() === "arrowleft") {
     let previousImage = currentImage.parentElement.previousElementSibling.children[0];
     renderBigImage(previousImage.alt, previousImage.src, previousImage);
@@ -190,3 +185,4 @@ document.addEventListener('keydown', function(e) {
     renderBigImage(nextImage.alt, nextImage.src, nextImage);
   }
 })
+*/

@@ -65,6 +65,11 @@
     opacity: 80%;
 }
 
+.popup__save-button_disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
 .popup__field {
     width: 100%;
     display: flex;
@@ -83,7 +88,6 @@
 }
 
 .popup__field-element:valid {
-
     background-color: rgb(232, 240, 254);
 }
 
