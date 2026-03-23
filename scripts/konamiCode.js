@@ -1,4 +1,3 @@
-//konami code shorcut (0 _ 0)
 //the following code is completly optional and introduces 2 things:
 //1: an easter egg in which, when you press keys acordingly in a certain pattern, 2 images of my favorite videogames will apear.
 //2: an option to navigate the gallery easier with left and right inputs

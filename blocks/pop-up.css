@@ -66,8 +66,11 @@
 }
 
 .popup__save-button_disabled {
-    opacity: 50%;
+    border: 1px solid black;
     cursor: not-allowed;
+    background-color: #fff;
+    color: #000;
+    opacity: 20% !important;
 }
 
 .popup__field {
@@ -90,17 +93,17 @@
     background-color: rgb(232, 240, 254);
 }
 
+.popup__field-element:invalid {
+    border-bottom: 1px solid red;
+}
+
 .popup__input-error {
-    height: 24px;
+    padding-top: 4px;
+    height: 20px;
     color: red;
-    font-size: 16px;
+    font-size: 12px;
     visibility: hidden;
 }
-/*
-.popup__input-error_hidden {
-    visibility: hidden;
-}
-*/
 
 .popup__field-element:invalid + .popup__input-error {
     visibility: visible;
