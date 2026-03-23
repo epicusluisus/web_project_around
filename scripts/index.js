@@ -102,6 +102,7 @@ formAddPlace.addEventListener("submit", (e) => {
   addCard(formAddPlace.inputTitle.value, formAddPlace.inputUrl.value);
   closeBigImage();
   formAddPlace.reset();
+  toggleButtonState(formAddPlace, false);
 })
 
 formEditProfile.addEventListener("submit", (e) => {
@@ -110,6 +111,7 @@ formEditProfile.addEventListener("submit", (e) => {
   tag.textContent = formEditProfile.inputTag.value;
   closeBigImage();
   formEditProfile.reset();
+  toggleButtonState(formEditProfile, false);
 })
 
 
@@ -153,36 +155,3 @@ document.addEventListener("click", (e) => {
     closeBigImage();
   }
 })
-
-/*
-//konami code shorcut (0 _ 0)
-let konamiCodePosition = 0;
-const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
-
-document.addEventListener('keydown', function(e) {
-  if (e.key.toLowerCase() === konamicode[konamiCodePosition]) {
-    konamiCodePosition += 1;
-  } else if (!(e.key.toLowerCase() === konamicode[konamiCodePosition]) && e.key.toLowerCase() === "arrowup") {
-    konamiCodePosition = 1;
-  } else {
-    konamiCodePosition = 0;
-  }
-
-  if (konamiCodePosition === 10) {
-    addCard("Hollow Knight", "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d0/02/e3/d002e325-299d-f87f-a737-7d7ad3c628ae/840095520225.jpg/1200x1200bf-60.jpg");
-    addCard("Enter the Gungeon", "https://image.api.playstation.com/vulcan/ap/rnd/202010/1205/7iRqnxpwQtVuEFuOjBAW1hFz.png");
-    alert("Cheat Code Activated");
-  }
-   
-  //navigate images with keyboard shortcuts
-  if (isBigImageActive === true && e.key.toLowerCase() === "arrowleft") {
-    let previousImage = currentImage.parentElement.previousElementSibling.children[0];
-    renderBigImage(previousImage.alt, previousImage.src, previousImage);
-  }
-    
-  if (isBigImageActive === true && e.key.toLowerCase() === "arrowright") {
-    let nextImage = currentImage.parentElement.nextElementSibling.children[0];
-    renderBigImage(nextImage.alt, nextImage.src, nextImage);
-  }
-})
-*/

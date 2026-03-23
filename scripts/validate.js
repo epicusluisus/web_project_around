@@ -2,14 +2,18 @@ const formAddPlaceInputs = formAddPlace.querySelectorAll(".popup__field-element"
 const formEditProfileInputs = formEditProfile.querySelectorAll(".popup__field-element");
 const formButton = document.querySelectorAll(".popup__save-button");
 
+const showInputError = (input) => {
+    console.log("stop" + input);
+}
+
 function hasInvalidInput(inputs, form) {
     let allValid = Array.from(inputs).every(input => input.validity.valid);
     if (allValid) {
-        toggleButtonState(form);
-    }
+        toggleButtonState(form, true);
+    } else toggleButtonState(form, false);
 }
 
-function toggleButtonState(form) {
+function toggleButtonState(form , state) {
     let buttonId = 0;
     if (form.id === formEditProfile.id) {
         buttonId = 0;
@@ -18,16 +22,21 @@ function toggleButtonState(form) {
         buttonId = 1;
     }
 
-    formButton[buttonId].classList.toggle("popup__save-button_disabled");
-    formButton[buttonId].disabled = false;
+    if (state) {
+        formButton[buttonId].classList.remove("popup__save-button_disabled");
+        formButton[buttonId].disabled = false;
+    } else {
+        formButton[buttonId].classList.add("popup__save-button_disabled");
+        formButton[buttonId].disabled = true;
+    }
 } 
 
-function hasValidInput(input, inputs, form) {
+function enableValidation(input, inputs, form) {
     input.addEventListener("input", () => {
         if (input.validity.valid) {
             //hideInputError();
         } else {
-            //showInputError();
+            showInputError(input);
         }
         hasInvalidInput(inputs, form);
     })
@@ -35,7 +44,7 @@ function hasValidInput(input, inputs, form) {
 
 function setEventListeners(inputs, form) {
     inputs.forEach((input) => {
-        hasValidInput(input, inputs, form);
+        enableValidation(input, inputs, form);
     })
 }
 

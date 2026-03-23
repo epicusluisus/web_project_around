@@ -28,6 +28,7 @@
                 maxlength="40"
                 required
               />
+              <div class="popup__input-error popup__input-error_hidden">Enter at least 2 characters</div>
               <input
                 class="popup__field-element"
                 placeholder="Acerca de mi"
@@ -37,6 +38,7 @@
                 maxlength="120"
                 required
               />
+              <div class="popup__input-error popup__input-error_hidden">Enter at least 2 characters</div>
             </fieldset>
             <button class="popup__save-button popup__save-button_disabled button" type="submit" disabled>
               Guardar
@@ -53,10 +55,11 @@
                 placeholder="Titulo de la imágen"
                 type="text"
                 id="inputTitle"
-                minlength="1"
+                minlength="2"
                 maxlength="32"
                 required
               />
+               <div class="popup__input-error popup__input-error_hidden">Enter at least 2 characters</div>
               <input
                 class="popup__field-element"
                 placeholder="Url de la imágen"
@@ -64,6 +67,7 @@
                 id="inputUrl"
                 required
               />
+               <div class="popup__input-error popup__input-error_hidden">Enter a valid URL</div>
             </fieldset>
             <button class="popup__save-button popup__save-button_disabled button" type="submit" disabled>
               Guardar
@@ -132,5 +136,6 @@
 
     <script src="scripts/index.js"></script>
     <script src="scripts/validate.js"></script>
+    <script src="scripts/konamiCode.js"></script>
   </body>
 </html>
