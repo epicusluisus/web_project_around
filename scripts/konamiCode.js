@@ -1,6 +1,5 @@
-//the following code is completely optional and introduces 2 things:
-//1: The option to input the classic Konami code and add 3 secret cards about my favorite videogames
-//2: The abiliy to navigate the gallery easier with left and right keys
+//the following code is completely optional
+//it allows you to input the classic Konami code and add 3 secret cards about my favorite videogames
 
 let konamiCodePosition = 0;
 const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
@@ -29,24 +28,10 @@ function handleKeydown(e) {
   }
 
   if (konamiCodePosition === 10) {
-    secretVideogames.forEach((item) => {
-      addCard(item.title, item.link);
-    })
+    addCard(secretVideogames);
     alert("Cheat Code Activated");
     document.removeEventListener("keydown", handleKeydown);
   }
-   /*
-  //navigate images with keyboard shortcuts
-  if (isBigImageActive === true && e.key.toLowerCase() === "arrowleft") {
-    let previousImage = currentImage.parentElement.previousElementSibling.children[0];
-    renderBigImage(previousImage.alt, previousImage.src, previousImage);
-  }
-    
-  if (isBigImageActive === true && e.key.toLowerCase() === "arrowright") {
-    let nextImage = currentImage.parentElement.nextElementSibling.children[0];
-    renderBigImage(nextImage.alt, nextImage.src, nextImage);
-  }
-    */
 }
 
 document.addEventListener("keydown", handleKeydown);
