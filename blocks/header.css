@@ -1,4 +1,13 @@
-.header {
+.header__navigation {
+  padding: 16px 0 18px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__navigation-logo {
+  max-width: 140px;
+}
+
+.header__stats {
   padding: 24px 0;
   width: 100%;
   display: grid;
@@ -69,7 +78,7 @@
 
 /* --- --- */
 @media screen and (max-width: 800px) {
-  .header {
+  .header__stats {
     gap: 16px;
   }
 
@@ -87,13 +96,17 @@
 }
 
 @media screen and (max-width: 480px) {
-  .header {
+  .header__stats {
     grid-template-columns: 1fr;
     grid-template-areas:
       "image"
       "profile"
       "button";
     justify-items: center;
+  }
+
+  .header__navigation-logo {
+    max-width: 120px;
   }
 
   .header__avatar {

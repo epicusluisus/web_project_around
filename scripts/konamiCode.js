@@ -1,20 +1,9 @@
-//the following code is completly optional and introduces 2 things:
+//the following code is completely optional and introduces 2 things:
 //1: The option to input the classic Konami code and add 3 secret cards about my favorite videogames
 //2: The abiliy to navigate the gallery easier with left and right keys
 
 let konamiCodePosition = 0;
-const konamicode = [
-  "arrowup",
-  "arrowup", 
-  "arrowdown", 
-  "arrowdown", 
-  "arrowleft", 
-  "arrowright", 
-  "arrowleft", 
-  "arrowright", 
-  "a", 
-  "b"
-];
+const konamicode = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "a", "b"];
 const secretVideogames = [
   {
     "title": "Hollow Knight",

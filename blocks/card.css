@@ -70,3 +70,14 @@
   opacity: 100%;
   transition: all 0.4s ease-out;
 }
+
+/* resize */
+@media screen and (max-width: 480px) {
+  .card__title {
+    font-size: 18px;
+  }
+
+  .card__footer {
+    padding: 12px 18px;
+  }
+}

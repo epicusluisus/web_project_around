@@ -1,6 +1,6 @@
-const magicButton = document.querySelector(".page");
 const contentGrid = document.querySelector(".content__grid");
 const noPostText = document.querySelector(".content__no-post");
+const allCards = [];
 let name = document.querySelector(".header__profile-name");
 let tag = document.querySelector(".header__profile-tag");
 
@@ -27,6 +27,7 @@ function addCard(cardTitle, cardLink) {
   card.querySelector(".card__image").addEventListener("click", (e) => {
     renderBigImage(e.target.alt, e.target.src, e.target);
   })
+  allCards.unshift({cardTitle, cardLink});
   checkNoPost();
 }
 
@@ -143,7 +144,6 @@ function renderBigImage(title, url, current) {
 }
 
 //key shorcuts
-document.addEventListener("scroll", closeBigImage);
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeBigImage();

@@ -28,7 +28,7 @@
                 maxlength="40"
                 required
               />
-              <div class="popup__input-error popup__input-error_hidden">Por favor, rellena este campo.</div>
+              <div class="popup__input-error popup__input-error_hidden">Rellena este campo.</div>
               <input
                 class="popup__field-element"
                 placeholder="Acerca de mi"
@@ -38,7 +38,7 @@
                 maxlength="200"
                 required
               />
-              <div class="popup__input-error popup__input-error_hidden">Por favor, rellena este campo.</div>
+              <div class="popup__input-error popup__input-error_hidden">Rellena este campo.</div>
             </fieldset>
             <button class="popup__save-button popup__save-button_disabled button" type="submit" disabled>
               Guardar
@@ -55,11 +55,11 @@
                 placeholder="Titulo de la imágen"
                 type="text"
                 id="inputTitle"
-                minlength="2"
+                minlength="1"
                 maxlength="30"
                 required
               />
-               <div class="popup__input-error popup__input-error_hidden">Por favor, rellena este campo.</div>
+               <div class="popup__input-error popup__input-error_hidden">Rellena este campo.</div>
               <input
                 class="popup__field-element"
                 placeholder="Url de la imágen"
@@ -67,7 +67,7 @@
                 id="inputUrl"
                 required
               />
-               <div class="popup__input-error popup__input-error_hidden">Por favor, introduce una dirección web.</div>
+               <div class="popup__input-error popup__input-error_hidden">Introduce una dirección web.</div>
             </fieldset>
             <button class="popup__save-button popup__save-button_disabled button" type="submit" disabled>
               Guardar
@@ -75,26 +75,28 @@
           </form>
       </div>
       
-      <!--header n' nav Timezz-->
-      <nav class="nav">
-        <img
-          class="nav__logo"
-          src="images/logo.svg"
-          alt="logo around the US"
-        />
-      </nav>
+      <!--header-->
       <header class="header">
-        <img
-          class="header__avatar"
-          src="images/profile-image.jpg"
-          alt=""
-        />
-        <div class="header__profile">
-          <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
-          <button class="header__edit-button button"></button>
-          <p class="header__profile-tag">Diseñador web fullstack</p>
+        <div class="header__navigation">
+          <img
+            class="header__navigation-logo"
+            src="images/logo.svg"
+            alt="logo around the US"
+          />
         </div>
-        <button class="header__add-button button"></button>
+        <div class="header__stats">
+          <img
+            class="header__avatar"
+            src="images/profile-image.jpg"
+            alt=""
+          />
+          <div class="header__profile">
+            <h2 class="header__profile-name">Luis Ángel Quiñonez</h2>
+            <button class="header__edit-button button"></button>
+            <p class="header__profile-tag">Diseñador web fullstack</p>
+          </div>
+          <button class="header__add-button button"></button>
+        </div>
       </header>
 
       <!--Content Timezz-->
