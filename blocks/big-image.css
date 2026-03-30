@@ -34,6 +34,10 @@
     font-size: 18px;
 }
 
+.big-image_closed {
+    display: none;
+}
+
 /* --- --- --- */
 @media  screen and (max-width: 500px) {
     .big-image {

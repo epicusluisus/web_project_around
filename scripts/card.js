@@ -1,3 +1,8 @@
+const bigImage = document.querySelector(".big-image");
+const bigImageImage = bigImage.querySelector(".big-image__image");
+const bigImageText = bigImage.querySelector(".big-image__text");
+const bigImagecloseButton = bigImage.querySelector(".big-image__close-button");
+
 const initialCards = [
   {
     "title": "Seattle, Washington",
@@ -57,21 +62,18 @@ class Card {
         this._cardElement.querySelector(".card__image").addEventListener("click", () => {
             this._renderBigImage();
         })
+        bigImagecloseButton.addEventListener("click", () => {
+            closeBigImage();
+        })
     }
 
     _renderBigImage() {
-        const bigImage = document.querySelector("#big-image-template").content.querySelector(".big-image").cloneNode(true);
+        bigImageImage.src = this._image;
+        bigImageImage.alt = this._title;
+        bigImageText.textContent = this._title;
 
-        bigImage.querySelector(".big-image__image").src = this._image;
-        bigImage.querySelector(".big-image__image").alt = this._title;
-        bigImage.querySelector(".big-image__text").textContent = this._title.slice(9);
         openPopupOverlay();
-        popup.append(bigImage);
-    }
-
-    _closeBigImage() {
-        closePopupOverlay();
-        bigImage.remove();
+        bigImage.classList.remove("big-image_closed");
     }
 
     _likeCard() {
@@ -83,15 +85,14 @@ class Card {
         checkNoPost();
     }
 }
-/*
-const closeBigImage = () => {
-  formAddPlace.classList.add("popup_closed");
-  formEditProfile.classList.add("popup_closed");
-  closePopupOverlay();
-  imageContainer.remove();
-}
-*/
 
+
+const closeBigImage = () => {
+    closePopupOverlay();
+    bigImage.classList.add("big-image_closed");
+}
+
+//global function for adding cards
 const addCard = (cards) => {
     cards.forEach((item) => {
         const card = new Card(item);

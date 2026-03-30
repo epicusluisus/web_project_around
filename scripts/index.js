@@ -4,52 +4,18 @@ const allCards = [];
 let name = document.querySelector(".header__profile-name");
 let tag = document.querySelector(".header__profile-tag");
 
-const noPost = () => noPostText.classList.remove("content__no-post__hidden");
-const hideNoPost = () => noPostText.classList.add("content__no-post__hidden");
-const checkNoPost = () => contentGrid.children.length === 0 ? noPost() : hideNoPost();
+const checkNoPost = () => contentGrid.children.length === 0
+  ? noPostText.classList.remove("content__no-post__hidden")
+  : noPostText.classList.add("content__no-post__hidden");
 
-/*
-function addCard(title, link) {
-  const cardTemplate = document.querySelector("#card-template").content;
-  const card = cardTemplate.querySelector(".card").cloneNode(true);
-
-  card.querySelector(".card__title").textContent = title;
-  card.querySelector(".card__image").src = link;
-  card.querySelector(".card__image").alt = `Photo of ${title}`;
-
-  card.querySelector(".card__like").addEventListener("click", (e) => {
-    e.target.classList.toggle("card__like_active");
-  })
-  card.querySelector(".card__delete-button").addEventListener("click", (e) => {
-    e.target.parentElement.remove();
-    checkNoPost();
-  })
-  contentGrid.prepend(card);
-  card.querySelector(".card__image").addEventListener("click", (e) => {
-    renderBigImage(e.target.alt, e.target.src, e.target);
-  })
-  allCards.unshift({title, link});
-  checkNoPost();
-}
-
-//Forms and overlays
-*/
 const popup = document.querySelector(".popup");
 const popupOverlay = popup.querySelector(".popup__overlay");
 const openPopupOverlay = () => popup.classList.remove("popup_closed");
 const closePopupOverlay = () => popup.classList.add("popup_closed");
-/*
+
 const editButton = document.querySelector(".header__edit-button");
 const addButton = document.querySelector(".header__add-button");
 const saveButton = document.querySelector(".popup__save-button");
-const closeButton = document.querySelectorAll(".popup__close-button");
-closeButton.forEach((item) => {
-  item.addEventListener("click", () => {
-    closeBigImage();
-    formAddPlace.reset();
-    formEditProfile.reset();
-  })
-})
 
 const formAddPlace = document.forms.formAddPlace;
 const formEditProfile = document.forms.formEditProfile;
@@ -70,52 +36,42 @@ addButton.addEventListener("click", () => {
 
 formAddPlace.addEventListener("submit", (e) => {
   e.preventDefault();
-  addCard(formAddPlace.inputTitle.value, formAddPlace.inputUrl.value);
-  closeBigImage();
+  let submitCard = {};
+  submitCard.link = formAddPlace.inputUrl.value;
+  submitCard.title = formAddPlace.inputTitle.value;
+  addCard([submitCard]);
+
   formAddPlace.reset();
   toggleButtonState(formAddPlace, false);
+  closeForm();
 })
 
 formEditProfile.addEventListener("submit", (e) => {
   e.preventDefault();
   name.textContent = formEditProfile.inputName.value;
   tag.textContent = formEditProfile.inputTag.value;
-  closeBigImage();
   formEditProfile.reset();
   toggleButtonState(formEditProfile, false);
+  closeForm();
 })
 
-
-//render the big image
-const bigImage = document.querySelector("#big-image-template").content;
-const imageContainer = bigImage.querySelector(".big-image").cloneNode(true);
-
-const closeBigImage = () => {
+const closeForm = () => {
+  closePopupOverlay();
   formAddPlace.classList.add("popup_closed");
   formEditProfile.classList.add("popup_closed");
-  closePopupOverlay();
-  imageContainer.remove();
-}
-
-function renderBigImage(title, url) {
-  imageContainer.querySelector(".big-image__image").src = url;
-  imageContainer.querySelector(".big-image__image").alt = title;
-  imageContainer.querySelector(".big-image__text").textContent = title.slice(9);
-  imageContainer.querySelector(".big-image__close-button").addEventListener("click", closeBigImage)
-  openPopupOverlay();
-  popup.append(imageContainer);
 }
 
 //key shorcuts
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeBigImage();
+    closeForm();
   }
 })
 
 document.addEventListener("click", (e) => {
   if (e.target === popupOverlay) {
     closeBigImage();
+    closeForm();
   }
 })
-  */
